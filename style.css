@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #eee;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+#visualizer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#visualizer canvas {
+  display: block;
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  max-width: 340px;
+  margin: 16px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #222;
+  border-radius: 8px;
+}
+
+/* title, form, song */
+#top-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 340px;
+}
+
+/* mobile stacking */
+@media (max-width: 800px) {
+  #top-panel {
+    position: relative;
+    width: auto;
+  }
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+label {
+  color: #aaa;
+}
+
+/* ---------- form ---------- */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+label {
+  width: 100%;
+}
+
+input,
+button {
+  font: inherit;
+  color: #eee;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover,
+input:focus {
+  border-color: #888;
+  outline: none;
+}
+
+#status {
+  color: #ffb3b3;
+  margin: 8px 0;
+}
+
+/* ---------- song ---------- */
+#track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#cover {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#song-name {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* ---------- legend ---------- */
+#legend {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+#legend p {
+  margin: 0 0 6px;
+}
+
+#legend b {
+  color: #eee;
+}
+
+/* ---------- table ---------- */
+#data summary {
+  cursor: pointer;
+  padding-block: 4px;
+}
+
+#data[open] summary {
+  margin-bottom: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px 0;
+  border-bottom: 1px solid #222;
+}
+
+th {
+  color: #aaa;
+  font-weight: normal;
+}
+
+/* this song column */
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: right;
+}
+
+/* colored dot matching each planet */
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* hover label, moved to the mouse position by JavaScript */
+#tooltip {
+  position: fixed;
+  z-index: 2;
+  padding: 4px 8px;
+  background: #000;
+  border: 1px solid #444;
+  border-radius: 4px;
+  pointer-events: none; /* so it never blocks the mouse */
+}

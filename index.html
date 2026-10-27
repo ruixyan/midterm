@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Song Solar System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- three.js canvas -->
+  <div id="visualizer"></div>
+
+  <!-- hover card -->
+  <div id="tooltip" hidden></div>
+
+  <header id="top-panel" class="panel">
+    <h1>Song Solar System</h1>
+
+    <!-- user input form -->
+    <form id="track-form">
+      <label for="track-input">Spotify track link or ID</label>
+      <input type="text" id="track-input" placeholder="https://open.spotify.com/track/..." required>
+      <button type="submit">Look up</button>
+    </form>
+
+    <!-- status updates-->
+    <p id="status"></p>
+
+    <!-- name + cover -->
+    <div id="track">
+      <img id="cover" alt="" hidden>
+      <h2 id="song-name">No song yet</h2>
+    </div>
+  </header>
+
+  <!-- legend -->
+  <main class="panel">
+    <div id="legend">
+      <p><b>Sun</b> = the song. Color is the key; it pulses on the beat.</p>
+      <p><b>Planets</b> = features, sized by value. Faster songs orbit faster; tilted orbits mean minor.</p>
+      <p>Drag to turn · Scroll to zoom · Hover a planet to pause and see its value</p>
+    </div>
+
+    <!-- key -->
+    <details id="data" open>
+      <summary>Song data</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>This song</th>
+          </tr>
+        </thead>
+        <tbody id="features"></tbody>
+      </table>
+    </details>
+  </main>
+
+  <!-- three.js import -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
