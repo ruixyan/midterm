@@ -1,8 +1,14 @@
+@font-face {
+  font-family: "Fraktion-Regular";
+  src: url("/fonts/PPFraktionSans-Light.otf");
+}
+
+
 body {
   margin: 0;
   background: #000;
   color: #eee;
-  font-family: system-ui, sans-serif;
+  font-family: "Fraktion-Regular", sans-serif;
   font-size: 14px;
 }
 
